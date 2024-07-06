@@ -1,0 +1,310 @@
+1) What is cloud computing?
+----------------------------
+A)Cloud computing is the delivery of computing services over the internet, providing on-demand access to resources like servers, storage, databases, networking, software, and applications.
+
+
+
+2: What is Amazon EC2?
+----------------------
+Answer: Amazon EC2 (Elastic Compute Cloud) is a cloud computing service provided by Amazon Web Services (AWS) that offers virtual servers, known as instances, for running applications in the cloud. 
+It provides scalability, flexibility, and cost-effectiveness by allowing users to easily scale up or down their compute capacity based on their needs.
+
+
+3: What is Security Group in Amazon EC2?
+----------------------------------------
+Answer: Amazon Security group acts like a virtual firewall for you EC2 instances, they control both inbound and outbound traffic. 
+It acts as a protective barrier, allowing you to define rules that determine which traffic is allowed to access your instances.
+ Security groups operate at the instance level, meaning you can assign one or more security groups to each instance.
+
+
+4: What is Amazon Machine Image (AMI)?
+-------------------------------------
+Answer: An Amazon Machine Image (AMI) is a special type of pre-configured virtual machine image that is used to create virtual servers (EC2 instances) in the AWS environment. 
+You must specify an AMI during the launch of EC2 instance. This is a faster way to setup an EC2 instance with pre-configured software, no manual setup required.
+ Multiple EC2 instances can be launched from a single AMI.
+
+
+5: What is instance types?
+-------------------------
+Answer: An instance type in Amazon EC2 refers to the specification of virtual hardware resources assigned to an EC2 instance.
+ It defines the computing capacity, memory, storage, and networking capabilities of the instance. Each instance type has its own pricing structure and performance characteristics, allowing users to choose the most suitable option based on their specific application requirements and budget.
+For example –
+
+General Purpose: Instances optimized for a balance of compute, memory, and networking resources. Example: t3.medium.
+---------------
+Compute Optimized: Instances designed for applications that require high computational power. Example: c5.large.
+------------------
+Memory Optimized: Instances with large memory capacity, suitable for memory-intensive workloads. Example: r5.large.
+----------------
+Storage Optimized: Instances with high-performance storage for data-intensive workloads. Example: i3.large.
+-----------------
+GPU Instances: Instances equipped with powerful GPUs for accelerated graphics and parallel processing. Example: g4dn.xlarge.
+-------------
+
+
+
+6: How do you get charged in AWS?
+----------------------------------
+Answer: In Amazon EC2, you are charged based on several factors that includes –
+
+Instance Types: The primary cost in EC2 is based on the type and size of the instances you choose.
+--------------
+Instance Hours: You are billed for the number of hours that your instances are running. In case of instance stopped state Amazon EBS volume or an Amazon EFS file system still associated with EC2, that are billed for storage.
+--------------
+On-Demand Instances: On-Demand instances are billed per hour based on the instance type and the region in which they are running.
+-------------------
+Reserved Instances: Reserved Instances offer discounted pricing compared to On-Demand instances. By committing to a specific term (one or three years) and payment option (all upfront, partial upfront, or no upfront), you can achieve cost savings for long-term usage.
+------------------
+Spot Instances: Spot Instances allow you to bid on unused EC2 capacity and potentially receive instances at significantly lower prices. Spot Instance pricing fluctuates based on supply and demand, and your instances may be interrupted if the Spot price exceeds your bid.
+---------------
+Storage: You are billed for the storage capacity you allocate for your instances, such as Amazon Elastic Block Store (EBS) volumes or Amazon Elastic File System (EFS) file systems. The cost depends on the storage type, capacity, and region.
+-------
+Data Transfer: Data transfer costs apply when data is transferred between different regions, availability zones, or over the internet. Data transfer within the same AWS region or availability zone is usually free.
+--------------
+Load Balancers, Auto Scaling, and Other Services: Additional services like Elastic Load Balancer, Auto Scaling, Amazon CloudWatch, and others may have their own pricing based on their usage and configuration.
+-------------------------------------------------
+
+
+
+
+
+
+7: What are the different types of cloud computing services?
+-------------------------------------------------------------
+Answer: Cloud computing services mainly divided into three types:
+
+1)Infrastructure as a Service (IaaS): Provides virtualized computing resources such as virtual machines, storage, and networks, allowing users to build their own infrastructure.
+-------------------------------------
+2)Platform as a Service (PaaS): Offers a platform and tools for developing, testing, and deploying applications without the need to manage the underlying infrastructure.
+-------------------------------
+3)Software as a Service (SaaS): Delivers fully functional applications over the internet, eliminating the need for users to install and manage software on their devices.
+------------------------------
+
+4)Serverless Computing: Allows developers to focus on writing and deploying code without managing the underlying infrastructure. The cloud provider manages the server infrastructure dynamically as per demand.
+----------------------
+5)Storage as a Service: Provides cloud-based storage for storing and accessing data over the internet, offering scalability and data durability.
+-----------------------
+6)Database as a Service (DBaaS): Offers cloud-based database management systems, eliminating the need for users to set up and maintain their own databases.
+--------------------------------
+7)Function as a Service (FaaS): Enables developers to write and deploy small, event-driven functions in the cloud, paying only for the actual execution time.
+------------------------------
+
+
+8: What is AWS?
+-------------------
+Answer: AWS (Amazon Web Services) is the world’s biggest and most secure cloud platform. AWS offering many services such as computing power, virtual private network, database storage, content delivery etc. 
+to millions of customers including individual user, startups, organizations and government agencies across the globe.
+
+
+9: Explain AWS global infrastructure?
+-------------------------------------
+Answer: AWS global infrastructure refers to the extensive network of data centers, edge locations, and network connectivity points that Amazon Web Services (AWS) operates worldwide. 
+It provides the underlying infrastructure for AWS services, including compute, storage, database, networking, and more.
+
+Global infrastructure consisting of –
+-----------------------------------
+
+Regions: AWS has multiple geographic regions globally, each consisting of multiple availability zones.
+------- Regions are physically separated and designed to offer high availability and fault tolerance.
+
+Availability Zones: Within each region, there are multiple availability zones (AZs). Availability zones are isolated from each other, with their own power, cooling, and networking infrastructure.
+------------------
+ They provide redundancy and ensure applications remain available in case of failures or disruptions in one zone.
+ 
+ 
+ Edge Locations:AWS Edge locations serve as caching endpoints for content delivery, enabling faster access to data and lower latency for end users. 
+ ---------------- Edge locations are part of the Amazon CloudFront content delivery network (CDN).
+ 
+ 
+ 
+10: What are the security best practices for Amazon EC2?
+ ------------------------------------------------------
+Answer: We can apply the following security best practices to keep secure EC2 instances-
+
+1)Regularly update and patch your EC2 instances.
+2)Use security groups to control inbound and outbound traffic.
+3)Enable multi-factor authentication (MFA) for administrative access.
+4)Encrypt sensitive data at rest and in transit.
+5)Implement strong and unique passwords or SSH key pairs for access.
+6)Use AWS Identity and Access Management (IAM) to manage user permissions.
+7)Monitor and analyze logs for security events using services like AWS CloudTrail and Amazon Guard Duty.
+8)Enable automated backups and implement disaster recovery strategies.
+9)Restrict access to EC2 instances using network ACLs and VPC security groups.
+10)Regularly scan for vulnerabilities.
+
+ 
+11: What Is Key Pair?
+ ---------------------
+Answer: In the context of AWS, A key pair is a security credential that consists of a public key and a private key. It is used primarily for secure access to EC2 instances.
+ When you launch an EC2 instance, you need to specify a key pair. AWS generates the public key, and you download the private key file (.pem format) to your local machine. 
+ This private key is required for securely connecting to the EC2 instance using SSH (Secure Shell) or SFTP (Secure File Transfer Protocol).
+ 
+ 
+ 
+12: What is CloudFront?
+ -----------------------
+Answer: Amazon CloudFront is a content delivery network (CDN) offered by Amazon Web Services (AWS). It is designed to improve the performance, scalability, and availability of web content and applications by delivering them to users with low latency and high data transfer speeds. 
+CloudFront helps to distribute content across a global network of edge locations strategically located around the world.
+
+
+13: What Is Amazon Route 53?
+----------------------------
+Answer: Amazon Route 53 is a highly scalable and reliable Domain Name System (DNS) provided by AWS.
+Route 53 is commonly used for domain registration, DNS management, traffic routing, and load balancing in various scenarios, including websites, web applications, APIs, and other internet-facing services. 
+It routes the incoming internet traffic to the appropriate resources the based on the domain names entered by users.
+
+
+14: What is AWS RDS?
+--------------------
+Answer: Amazon RDS is a managed relational database service that provides organizations with a fully managed database in the cloud. 
+Amazon Aurora, MariaDB, Microsoft SQL Server, MySQL, Oracle, and PostgreSQL are just six of the database engines it supports. A relational database refers to a specific type of database that organizes data into tables consisting of rows and columns.
+Amazon RDS offers a reliable and affordable relational database solution, designed to meet industry standards.
+With the ability to adjust its capacity according to your needs, it ensures cost-efficiency.
+
+
+15: Name the database types in RDS?
+------------------------------------
+Answer: Following are the types of databases in RDS – MYSQL, PostgreSQL, SQL server, Aurora, Oracle, and MariaDB etc
+
+
+
+16: What is Amazon Virtual Private Cloud (VPC)?
+----------------------------------------------
+Answer: Amazon Virtual Private Cloud (Amazon VPC) is a logically isolated virtual network in the AWS cloud where you can launch AWS resources.
+ Each VPC that you create is logically isolated from other in the AWS cloud. You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways. 
+You can easily customize your Amazon VPC’s network configuration.
+
+
+17: What are the components of Amazon VPC?
+------------------------------------------
+Answer: The main components of an Amazon VPC are -:
+
+VPC: The Virtual Private Cloud itself is the main component. It is a logically isolated section of the AWS cloud where you can launch AWS resources.
+---
+Subnets: Subnets are subdivisions of the VPC’s IP address range. You can create multiple subnets within a VPC, and they are typically associated with different availability zones.
+--------
+Route Tables: Route tables control the traffic between subnets within the VPC and between the VPC and the internet. Each subnet must be associated with a route table that specifies the routing rules.
+------------
+Internet Gateway: An Internet Gateway (IGW) is a horizontally scalable and highly available AWS-managed gateway that allows communication between your VPC and the internet.
+-----------------
+NAT Gateway: A Network Address Translation (NAT) Gateway allows instances in your private subnets to communicate with the internet while blocking inbound traffic initiated from the internet. 
+------------
+It provides internet access for private instances without exposing their IP addresses to the public.
+
+Security Groups: Security Groups act as virtual firewalls for your instances. They control inbound and outbound traffic based on user-defined rules. Each instance within a VPC is associated with one or more security groups.
+----------------
+Network Access Control Lists (ACLs): Network ACLs are stateless, subnet-level firewalls that control inbound and outbound traffic at the subnet level. They provide an additional layer of security for your VPC by allowing or denying traffic based on rules you define.
+------------------------------------
+VPC Peering: VPC Peering enables you to connect multiple VPCs together, allowing them to communicate as if they were on the same network. It enables the resources in different VPCs to interact with each other using private IP addresses.
+-----------
+VPN Connections: Virtual Private Network (VPN) connections allow you to establish encrypted connections between your VPC and your on-premises network or other remote networks. It provides secure connectivity for resources in your VPC.
+----------------
+
+
+10.0.0.0 – Network address.
+10.0.0.1 – Reserved by AWS for the VPC router.
+10.0.0.2 – Reserved by AWS. The IP address of the DNS server is the base of the VPC network range plus two.
+10.0.0.3 – Reserved by AWS for future use.
+10.0.0.255 – Network broadcast address. It is not supporting broadcast in a VPC.
+
+
+
+18: What is Load balancing?
+---------------------------
+Answer: Load balancing is the process of distributing incoming network traffic or computational workload across multiple resources, such as servers, to optimize resource utilization, improve performance, and ensure high availability of services.
+
+Load balancers typically monitor the health and capacity of individual resources and direct traffic in a way that minimizes response time and maximizes throughput.
+
+
+
+19: What is Auto Scaling?
+------------------------
+Answer: AWS auto scaling is a great feature that provides the ability to monitor your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
+With Auto-scaling you can scale out/in resources (servers, database, storage, etc.) 
+automatically based on the pre-defined threshold for the metrics such as memory usage, network usage, CPU utilization.
+
+
+
+20: What is Placement Group in EC2?
+----------------------------------
+Answer: In Amazon EC2, a placement group is a logical grouping of instances within a single Availability Zone. Using a Placement Group provides advantages such as reduced network latency and increased network throughput. It is a free feature currently available in Amazon EC2.
+
+When an instance is stopped and restarted, it continues to operate within the same Placement Group. However, it is important to note that Instances from different Availability Zones cannot be added to the same Placement Groups,
+
+21: What is Amazon S3?
+---------------------
+Answer: Amazon Simple Storage Service (s3) is an object-based storage. It provides secure, fast, highly scalable and durable platform to store any type of data. Amazon S3 allows users to create a bucket (storage resource) to store different types of data like videos, images, files, documents etc.
+
+22: What is Versioning in S3?
+-----------------------------
+Answer: Users can enable versioning for s3 buckets to preserve every version of an object (user data) when an operation such as copy or delete is performed on it. Versioning means keeping the multiple forms of an object in the same s3 bucket.
+
+You can use the s3 versioning feature to preserve, retrieve, and restore. Versioning is used to restore, retrieve and preserve every version of every object and through it, we can also recover from both unintended user actions and application failures.
+
+
+
+
+
+23: What is Identity and Access Management (IAM)?
+------------------------------------------------
+Answer: AWS IAM is a fundamental component of AWS security, that helps you manage access to your AWS resources. IAM allows you to control who can access your resources and what actions they can perform. For example, a user allows to access EC2 service but deny to access S3 Service.
+
+IAM enables you to create and manage users, groups, and roles that can be assigned specific permissions to access AWS services and resources,
+
+
+
+Answer: Users – AWS IAM user is a unique identity with security credentials like a password or access & secret key. User is associated with permissions to control the use of AWS resources.
+-------------
+Groups – A user group can contain many users. You can grant permissions to group using access control policies, assigned permissions applicable to all users belongs to that group.
+------
+Roles – An IAM role is like an IAM user, Roles are used to delegating access to AWS resources and AWS Users temporarily instead of sharing credentials. A role is intended to be assumable by anyone who needs it.
+------
+
+
+
+
+24: Explain AWS IAM Policies?
+----------------------------
+Answer: AWS IAM policies are JSON documents that define permissions and access controls for AWS resources. They determine what actions users, groups, and roles can perform on specific resources within your AWS account.
+
+By default, Users, groups, and roles have no permissions, you need to assign the right policies to enforce security and compliance requirements within your organization.
+
+AWS policies are of two types –
+-------------------------------
+
+Identity-based policies: Identity-based policies are attached to AWS identities like user, group, or role.
+-----------------------
+Resource-based policies: Resource-based policies are attached to the AWS resources like Amazon S3 buckets, VPC endpoints, Amazon SQS queues, AWS KMS, and other services.
+-----------------------
+
+
+
+
+25: What are IAM users’ access and secret keys?
+----------------------------------------------
+Answer: IAM users’ access and secret keys are credentials used for programmatic access to AWS services and resources.
+
+Access Key: An access key is a unique identifier associated with an IAM user or an IAM role. It is a long string of characters (e.g., AKIAIOSFODNN7EXAMPLE) that is used to authenticate requests made to AWS services.
+
+Secret Key: A secret key is a cryptographic key associated with an access key. It is a separate, confidential value (e.g., wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY) that must be kept secure. The secret key is used to sign the requests made with the access key, providing a form of authentication.
+
+
+
+
+
+26)How do you monitor user activity with IAM?
+--------------------------------------------
+Answer: Monitoring user activity and roles is an important task for IAM managers. By using monitoring features, you can see what IAM users are doing, spot any unusual or unauthorized actions, and make sure security rules are followed. Monitoring user activity helps keep your AWS environment safe and secure.
+
+You can use following services and tools to monitor User’s activity –
+
+AWS CloudTrail: CloudTrail records API activity within your AWS account, including IAM user activity.
+--------------
+IAM User Activity Reports: IAM provides user activity reports that give you insights into the activity of IAM users in your AWS account.
+--------------------------
+CloudWatch Events: You can configure CloudWatch Events rules to monitor and respond to IAM events.
+------------------
+IAM Access Analyzer: IAM Access Analyzer helps you identify unintended access to your AWS resources.
+--------------------
+
+
